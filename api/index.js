@@ -3,8 +3,8 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const authRoute = require(path.join(__dirname,"/Routes/auth"));
-const userRoute = require(path.join(__dirname,"/Routes/user"));
+const authRoute = require(path.join(__dirname,"/Routes/auth.js"));
+const userRoute = require(path.join(__dirname,"/Routes/user.js"));
 const multer = require("multer");
 
 const app = express();
@@ -31,7 +31,7 @@ mongoose
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "../client/src/img");
+    cb(null, path.join(__dirname, "../client/src/img"));
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
