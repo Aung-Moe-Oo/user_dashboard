@@ -3,8 +3,8 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const authRoute = require("./Routes/auth");
-const userRoute = require("./Routes/user");
+const authRoute = require(path.join(__dirname,"/Routes/auth"));
+const userRoute = require(path.join(__dirname,"/Routes/user"));
 const multer = require("multer");
 
 const app = express();
@@ -14,6 +14,11 @@ app.use(express.json());
 app.use(cookieParser());
 
 dotenv.config();
+// for vercel deployment
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config({ path: __dirname + "/.env" });
+}
+
 mongoose.set("strictQuery", false);
 mongoose
   .connect(process.env.MONGO_URL)
@@ -54,6 +59,14 @@ app.post("/api/upload", upload.single("file"), function (req, res) {
 
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
+
+// static files (build of your frontend)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+  });
+}
 
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server is running on port 5000!");
