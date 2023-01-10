@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  padding: 1rem 1rem 3rem;
+  position: relative;
+}
+.menu {
+  flex: 1;
+}
+.menu ul {
+  list-style: none;
+  padding: 3rem 1rem;
+  font-size: 1.2rem;
+}
+.menu ul li:first-child {
+  border-top: 2px dotted #000;
+}
+.menu ul li {
+  cursor: pointer;
+  padding: 1rem 0;
+  border-bottom: 2px dotted #000;
+}
+.profile {
+  flex: 3;
+}
+h1 {
+  display: inline-block;
+  font-weight: lighter;
+}
+h3 {
+  margin: 8px 0;
+}
+.line {
+  display: inline-block;
+  width: 50%;
+  height: 5px;
+  background-color: black;
+  margin: 0 10px;
+}
+.title svg {
+  margin: 0 10px;
+  vertical-align: middle;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card p {
+  margin: 0;
+  color: red;
+}
+.img {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem;
+}
+.img svg {
+  width: 6rem;
+  height: 6rem;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+  .line {
+    display: none;
+  }
+  .title h1 {
+    display: block;
+  }
+  input {
+    width: 250px;
+  }
+  .profile {
+    padding: 1rem;
+  }
+  .card {
+    flex-direction: column;
+  }
+  .card .img {
+    margin: 0 auto;
+  }
+}

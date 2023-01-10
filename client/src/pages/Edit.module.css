@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  padding: 1rem 1rem 3rem;
+  position: relative;
+}
+.menu {
+  flex: 1;
+}
+.menu ul {
+  list-style: none;
+  padding: 3rem 1rem;
+  font-size: 1.2rem;
+}
+.menu ul li:first-child {
+  border-top: 2px dotted #000;
+}
+.menu ul li {
+  cursor: pointer;
+  padding: 1rem 0;
+  border-bottom: 2px dotted #000;
+}
+.profile {
+  flex: 3;
+}
+h1 {
+  display: inline-block;
+  font-weight: lighter;
+}
+h3 {
+  margin: 8px 0;
+}
+.line {
+  display: inline-block;
+  width: 50%;
+  height: 5px;
+  background-color: black;
+  margin: 0 10px;
+}
+.title svg {
+  margin: 0 10px;
+  vertical-align: middle;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card p {
+  margin: 0;
+  color: red;
+}
+.img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+.img label {
+  border-bottom: 1px solid #000;
+}
+.img span {
+  font-size: 10px;
+  max-width: 6rem;
+}
+
+.img svg,
+img {
+  width: 6rem;
+  height: 6rem;
+}
+/* For edit jsx */
+.buttons {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.save,
+.cancel {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+.save {
+  background: rgba(51, 51, 51, 0.7);
+  color: white;
+}
+.cancel {
+  border: 2px solid #000;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  background-color: rgba(51, 51, 51, 0.3);
+}
+input {
+  width: 300px;
+  padding: 5px;
+  background-color: rgba(51, 51, 51, 0.3);
+  margin: 0;
+}
+.error {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(223, 18, 18);
+}
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+  .line {
+    display: none;
+  }
+  .title h1 {
+    display: block;
+  }
+  input {
+    width: 250px;
+  }
+  .profile {
+    padding: 1rem;
+  }
+  .card {
+    flex-direction: column;
+  }
+  .card .img {
+    margin: 0 auto;
+  }
+}

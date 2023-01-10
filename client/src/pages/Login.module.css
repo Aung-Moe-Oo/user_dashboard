@@ -1,0 +1,82 @@
+.container {
+  width: 100vw;
+  height: calc(100vh - 64px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.formWrapper h1 {
+  font-weight: lighter;
+}
+.formWrapper h1 span {
+  font-weight: bold;
+}
+.formWrapper .line {
+  height: 5px;
+  width: 7rem;
+  background-color: #000;
+  margin: 0 2rem 2rem;
+}
+.formWrapper form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.formWrapper button {
+  color: #fff;
+  background-color: #000;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  margin: 1rem 5rem;
+}
+.formWrapper form label {
+  margin-right: 10px;
+}
+input[type="text"],
+input[type="password"] {
+  height: 1.5rem;
+  background-color: #d8d8d85d;
+  margin: 0.5rem 0;
+}
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.checkbox {
+  position: relative;
+}
+.checkbox input {
+  margin-left: -60px;
+}
+.checkbox input::before {
+  content: "Keep me logged in";
+  position: absolute;
+  right: -180px;
+  left: 100px;
+}
+.link {
+  display: flex;
+  align-items: center;
+}
+.error {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(223, 18, 18);
+}
+@media screen and (max-width: 480px) {
+  .formWrapper form {
+    text-align: center;
+  }
+}

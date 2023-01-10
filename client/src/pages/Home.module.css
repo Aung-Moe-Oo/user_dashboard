@@ -1,0 +1,71 @@
+.containerWrapper {
+  margin: 1rem;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+h1 {
+  font-weight: lighter;
+}
+.line {
+  display: inline-block;
+  width: 80%;
+  height: 5px;
+  background-color: black;
+  margin-left: 10px;
+}
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+.group select {
+  width: 200px;
+  padding: 5px;
+  margin: 10px 5px;
+}
+.card {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  flex: 1 0 400px;
+  background-color: #fff;
+}
+.card img {
+  flex: 1;
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+}
+.card .desc {
+  flex: 2;
+}
+.card .desc p {
+  font-size: 14px;
+}
+.paginationWrapper {
+  text-align: center;
+  margin: 1rem;
+}
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+@media screen and (max-width: 480px) {
+  .card {
+    flex-direction: column;
+    max-width: 250px;
+    padding: 1rem;
+    height: 300px;
+    flex: 1;
+  }
+}
