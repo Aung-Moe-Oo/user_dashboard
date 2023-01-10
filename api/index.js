@@ -1,6 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const path = require("path");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require(path.join(__dirname,"/Routes/auth.js"));
